@@ -1,0 +1,10 @@
+<package>
+  <name>clp_catkin</name>
+  <version>0.0.0</version>
+  <description>clp_catkin</description>
+  <maintainer email="tunghdinh@gmail.com">Hoang Tung Dinh</maintainer>
+
+  <license>Closed</license>
+
+  <buildtool_depend>catkin</buildtool_depend>
+</package>
