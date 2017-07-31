@@ -8,6 +8,7 @@ find_package(catkin REQUIRED)
 
 catkin_package(
   INCLUDE_DIRS ${CATKIN_DEVEL_PREFIX}/include
+  CFG_EXTRAS clp-extras.cmake
 )
 
 include(ExternalProject)
