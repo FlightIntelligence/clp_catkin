@@ -14,7 +14,7 @@ catkin_package(
 include(ExternalProject)
 
 ExternalProject_Add(clp_src
-  URL https://www.coin-or.org/download/source/Clp/Clp-1.16.11.tgz
+  URL ${CMAKE_CURRENT_SOURCE_DIR}/Clp-1.16.11.tgz
   CONFIGURE_COMMAND cd ../clp_src && ./configure -C --prefix=${CATKIN_DEVEL_PREFIX}
   BUILD_COMMAND cd ../clp_src && make -j8
   INSTALL_COMMAND cd ../clp_src && make install -j8
@@ -29,4 +29,4 @@ target_link_libraries(${PROJECT_NAME}
   ${CATKIN_DEVEL_PREFIX}/lib/libCoinUtils${CMAKE_SHARED_LIBRARY_SUFFIX}
   ${CATKIN_DEVEL_PREFIX}/lib/libOsi${CMAKE_SHARED_LIBRARY_SUFFIX}
   ${CATKIN_DEVEL_PREFIX}/lib/libOsiClp${CMAKE_SHARED_LIBRARY_SUFFIX}
-)
+  )
