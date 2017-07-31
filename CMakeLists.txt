@@ -11,13 +11,18 @@ catkin_package(
 
 include(ExternalProject)
 
-
 ExternalProject_Add(clp_src
   URL https://www.coin-or.org/download/source/Clp/Clp-1.16.11.tgz
   CONFIGURE_COMMAND cd ../clp_src && ./configure -C --prefix=${CATKIN_DEVEL_PREFIX}
   BUILD_COMMAND cd ../clp_src && make -j8
   INSTALL_COMMAND cd ../clp_src && make install -j8
-)
+  )
 
 add_library(${PROJECT_NAME} src/dependency_tracker.cc)
 add_dependencies(${PROJECT_NAME} clp_src)
+
+target_link_libraries(${PROJECT_NAME}
+  ${CATKIN_DEVEL_PREFIX}/lib/libClp${CMAKE_SHARED_LIBRARY_SUFFIX}
+  ${CATKIN_DEVEL_PREFIX}/lib/libClpSolver${CMAKE_SHARED_LIBRARY_SUFFIX}
+  ${CATKIN_DEVEL_PREFIX}/lib/libCoinUtils${CMAKE_SHARED_LIBRARY_SUFFIX}
+)
