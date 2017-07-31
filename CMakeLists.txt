@@ -1,5 +1,6 @@
 cmake_minimum_required(VERSION 2.8.3)
 project(clp_catkin)
+add_compile_options(-std=c++11)
 
 file(MAKE_DIRECTORY ${CATKIN_DEVEL_PREFIX}/include)
 
@@ -25,4 +26,6 @@ target_link_libraries(${PROJECT_NAME}
   ${CATKIN_DEVEL_PREFIX}/lib/libClp${CMAKE_SHARED_LIBRARY_SUFFIX}
   ${CATKIN_DEVEL_PREFIX}/lib/libClpSolver${CMAKE_SHARED_LIBRARY_SUFFIX}
   ${CATKIN_DEVEL_PREFIX}/lib/libCoinUtils${CMAKE_SHARED_LIBRARY_SUFFIX}
+  ${CATKIN_DEVEL_PREFIX}/lib/libOsi${CMAKE_SHARED_LIBRARY_SUFFIX}
+  ${CATKIN_DEVEL_PREFIX}/lib/libOsiClp${CMAKE_SHARED_LIBRARY_SUFFIX}
 )
